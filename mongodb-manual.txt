@@ -1,2 +1,65 @@
+MongoDB commands for databases
+
 View all databases
 show dbs
+
+
+Create a new or Switch databases
+use <dbName>
+example: use comments
+
+View Current databases
+dbName
+
+Delete databases
+db.dropDatabase()
+
+MongoDB commands for collections
+To show the collections in databases
+show collections
+
+To Create a collection named 'comments'
+db.createCollection('comments')
+
+To delete a collection named 'content'
+db.content.drop()
+
+MongoDB commands for Rows
+for inserting one row
+
+db.comments.insert({
+    'name': 'Harry',
+    'lang': 'JavaScript',
+    'member_since': 5
+})
+
+db.comments.insert({
+    'name': 'Harry',
+    'lang': 'JavaScript',
+    'member_since': 5,
+    'date': new Date()
+})
+
+for inserting many rows
+db.comments.insertMany([{
+    'name': 'Harpreet',
+    'lang': 'Management',
+    'member_since': 5
+}, {
+    'name': 'Raman',
+    'lang': 'JavaScript',
+    'member_since': 4
+}])
+
+for showing all the rows
+db.comments.find()
+db.comments.finde().pretty()
+
+for showing the limited rows
+db.comments.find().limit(2)
+
+Search fields/rows in a MongoDB database
+db.comments.find({'name': 'Raman'})
+
+Count the number of rows in MongoDB database
+db.comments.find().count()
