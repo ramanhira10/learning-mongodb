@@ -34,7 +34,7 @@ db.comments.insert({
 })
 
 db.comments.insert({
-    'name': 'Harry',
+    'name': 'Date',
     'lang': 'JavaScript',
     'member_since': 5,
     'date': new Date()
